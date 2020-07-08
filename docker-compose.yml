@@ -9,6 +9,7 @@ services:
         APP_ENV: ${APP_ENV}
         PHP_VERSION: ${PHP_VERSION}
         REMOTE_WORKING_DIR: ${REMOTE_WORKING_DIR}
+        USER: ${USER}
     container_name: app
     restart: unless-stopped
     volumes:
@@ -17,6 +18,8 @@ services:
     env_file: .env
     ports:
       - 9001:9001
+    depends_on:
+      - db
     networks:
       - app-network
 
@@ -37,26 +40,38 @@ services:
     networks:
       - app-network
 
-  database:
+  db:
     image: mysql:5.7
-    container_name: database
+    container_name: db
+    restart: unless-stopped
     environment:
-      MYSQL_DATABASE: "laravel"
-      MYSQL_USER: "user"
-      MYSQL_PASSWORD: "secret"
-      MYSQL_ROOT_PASSWORD: "password"
-    ports:
-      - 3306:3306
+      MYSQL_DATABASE: controle_clientes
+      MYSQL_ROOT_PASSWORD: root
     volumes:
-      - database-volume:/var/lib/mysql
+      - dbdata:/var/lib/mysql/
+      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: unless-stopped    
+    links:
+      - "db:db"
     depends_on:
-      - app
+      - db
+    ports:
+      - "8089:80"
     networks:
       - app-network
 
 # Docker Volumes
 volumes:
-  database-volume:
+  dbdata:
+    driver: local
 
 # Docker Networks
 networks:

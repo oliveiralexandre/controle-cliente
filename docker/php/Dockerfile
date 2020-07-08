@@ -12,7 +12,7 @@ ARG APP_ENV
 ARG REMOTE_WORKING_DIR
 
 # Current user
-ARG USER=eduardo.judici
+ARG USER
 
 # Install Additional dependencies
 RUN apk update && apk add --no-cache $PHPIZE_DEPS \
