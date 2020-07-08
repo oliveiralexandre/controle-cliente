@@ -3,12 +3,16 @@ ARG PHP_VERSION
 
 # PHP Version alpine image to install based on the PHP_VERSION environment variable
 FROM php:$PHP_VERSION-fpm-alpine
+LABEL maintainer="edujudici@gmail.com"
 
 # Application environment variable
 ARG APP_ENV
 
 # Remote working directory environment variable
 ARG REMOTE_WORKING_DIR
+
+# Current user
+ARG USER=eduardo.judici
 
 # Install Additional dependencies
 RUN apk update && apk add --no-cache $PHPIZE_DEPS \
@@ -47,14 +51,15 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Remove Cache
 RUN rm -rf /var/cache/apk/*
 
-# Add UID '1000' to www-data
-RUN apk add shadow && usermod -u 1000 www-data && groupmod -g 1000 www-data
+# Add user for laravel application
+RUN groupadd -g 1001 $USER
+RUN useradd -u 1001 -ms /bin/bash -g $USER $USER
 
 # Copy existing application directory permissions
-COPY --chown=www-data:www-data . $REMOTE_WORKING_DIR
+COPY --chown=$USER:$USER . $REMOTE_WORKING_DIR
 
 # Change current user to www
-USER www-data
+USER $USER
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
