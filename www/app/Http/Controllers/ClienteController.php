@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -17,7 +27,7 @@ class ClienteController extends Controller
         $limit = 5;
         $clientes = Cliente::latest()->paginate($limit);
 
-        return view('clientes.index', compact('clientes'))
+        return view('painel.clientes.index', compact('clientes'))
             ->with('i', (request()->input('page', 1) - 1) * $limit);
     }
 
@@ -28,7 +38,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        return view('painel.clientes.create');
     }
 
     /**
@@ -42,7 +52,7 @@ class ClienteController extends Controller
         $request->validate([
             'nome' => 'required',
             'cpf' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:clientes,email',
         ]);
 
         Cliente::create($request->all());
@@ -59,7 +69,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        return view('clientes.show', compact('cliente'));
+        return view('painel.clientes.show', compact('cliente'));
     }
 
     /**
@@ -70,7 +80,7 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        return view('clientes.edit', compact('cliente'));
+        return view('painel.clientes.edit', compact('cliente'));
     }
 
     /**
@@ -85,7 +95,7 @@ class ClienteController extends Controller
         $request->validate([
             'nome' => 'required',
             'cpf' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:clientes,email',
         ]);
 
         $cliente->update($request->all());
