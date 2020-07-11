@@ -53,30 +53,6 @@
                     </table>
 
                     {!! $clientes->links() !!}
-
-                    {{-- <table class="table table-hover ">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Título</th>
-                                <th scope="col">Descrição</th>
-                                <th scope="col">URL</th>
-                                <th scope="col">Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody data-bind="foreach: banners">
-                            <tr>
-                                <td scope="row" data-bind="text: id"></td>
-                                <td><span data-bind="text: title"></span></td>
-                                <td><span data-bind="text: description"></span></td>
-                                <td><span data-bind="text: url"></span></td>
-                                <td class="center">
-                                    <i class="mdi mdi-pencil" aria-hidden="true" data-bind="click: edit"></i>
-                                    <i class="mdi mdi-delete" aria-hidden="true" data-bind="click: remove"></i>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table> --}}
                 </div>
             </div>
         </div>
