@@ -30,8 +30,14 @@
                 </li>
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="{{route('clientes.index')}}">
-                        <i class="mdi mdi-table-edit"></i>
+                        <i class="mdi mdi-account-group"></i>
                         <span class="nav-text">Clientes</span>
+                    </a>
+                </li>
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="{{route('produtos.index')}}">
+                        <i class="mdi mdi-shopping"></i>
+                        <span class="nav-text">Produtos</span>
                     </a>
                 </li>
             </ul>
