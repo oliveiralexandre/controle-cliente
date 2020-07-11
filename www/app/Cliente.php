@@ -13,4 +13,9 @@ class Cliente extends Model
         'nome', 'cpf', 'email', 'data_aniversario', 'cep', 'endereco',
         'numero', 'complemento', 'bairro', 'cidade', 'estado', 'ddd', 'telefone'
     ];
+
+    public function veiculos()
+    {
+        return $this->hasMany('App\Veiculo');
+    }
 }

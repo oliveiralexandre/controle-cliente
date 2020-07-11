@@ -40,6 +40,12 @@
                         <span class="nav-text">Produtos</span>
                     </a>
                 </li>
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="{{route('veiculos.index')}}">
+                        <i class="mdi mdi-car-multiple"></i>
+                        <span class="nav-text">Veículos</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
