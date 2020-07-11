@@ -7,7 +7,7 @@
     <div id="sidebar" class="sidebar sidebar-with-footer">
         <!-- Aplication Brand -->
         <div class="app-brand">
-            <a href="/index.html">
+            <a href="{{route('home')}}">
                 <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"
                     width="30" height="33" viewBox="0 0 30 33">
                     <g fill="none" fill-rule="evenodd">
@@ -25,7 +25,7 @@
                 <li class="has-sub active">
                     <a class="sidenav-item-link" href="{{route('home')}}">
                         <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span class="nav-text">Dashboard</span>
+                        <span class="nav-text">Home</span>
                     </a>
                 </li>
                 <li class="has-sub">
