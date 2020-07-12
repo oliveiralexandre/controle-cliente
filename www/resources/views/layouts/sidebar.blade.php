@@ -48,7 +48,7 @@
                 </li>
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="{{route('contratos.index')}}">
-                        <i class="mdi mdi-car-multiple"></i>
+                        <i class="mdi mdi-content-paste"></i>
                         <span class="nav-text">Contratos</span>
                     </a>
                 </li>
