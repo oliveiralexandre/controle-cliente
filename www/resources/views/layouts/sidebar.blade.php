@@ -46,6 +46,12 @@
                         <span class="nav-text">Veículos</span>
                     </a>
                 </li>
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="{{route('contratos.index')}}">
+                        <i class="mdi mdi-car-multiple"></i>
+                        <span class="nav-text">Contratos</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

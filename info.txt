@@ -13,4 +13,18 @@
 ## Helper
     https://packagist.org/packages/browner12/helpers
 
-## 
+## Fluxo CRUD
+    1- gerar controller com todos os métodos necessários e model
+    docker-compose exec app php artisan make:controller ContratoController --resource --model=Contrato
+    nota: necessário preencher os métodos do controller e também as informações da tabela na model
+
+    2- migration para criar o arquivo com estrutura da tabela a ser gerada
+    docker exec -it app php artisan make:migration create_veiculos_table --create=veiculos
+    nota: necessário preencher as informações de colunas
+
+    3- executar a migrate para criar a tabela na base de dados
+    docker-compose exec app php artisan migrate
+
+    4- incluir as rotas no arquivo web.php
+
+    5- criar os arquivos de blades em www/resources/views/painel/<pasta com o nome do serviço>

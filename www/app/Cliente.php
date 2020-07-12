@@ -18,4 +18,9 @@ class Cliente extends Model
     {
         return $this->hasMany('App\Veiculo');
     }
+
+    public function contratos()
+    {
+        return $this->hasMany('App\Contrato');
+    }
 }
