@@ -96,7 +96,7 @@
                                     <input type="text" name="telefone" class="form-control" placeholder="Telefone" value="{{ old('telefone') }}">
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-4">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <a class="btn btn-secondary btn-default" href="{{ route('clientes.index') }}"> Voltar </a>
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>

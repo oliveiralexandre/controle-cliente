@@ -25,3 +25,4 @@ Route::resource('clientes', 'ClienteController');
 Route::resource('produtos', 'ProdutoController');
 Route::resource('veiculos', 'VeiculoController');
 Route::resource('contratos', 'ContratoController');
+Route::resource('mensalidades', 'MensalidadeController');

@@ -32,7 +32,7 @@
                         </tr>
                         @foreach ($veiculos as $veiculo)
                         <tr>
-                            <td>{{ ++$i }}</td>
+                            <td>{{ $veiculo->id }}</td>
                             <td>{{ $veiculo->cliente->nome }}</td>
                             <td>{{ $veiculo->marca }}</td>
                             <td>{{ $veiculo->modelo }}</td>

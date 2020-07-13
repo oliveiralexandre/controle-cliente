@@ -31,7 +31,7 @@
                         </tr>
                         @foreach ($clientes as $cliente)
                         <tr>
-                            <td>{{ ++$i }}</td>
+                            <td>{{ $cliente->id }}</td>
                             <td>{{ $cliente->nome }}</td>
                             <td>{{ $cliente->cpf }}</td>
                             <td>{{ $cliente->email }}</td>

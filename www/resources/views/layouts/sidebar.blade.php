@@ -52,6 +52,12 @@
                         <span class="nav-text">Contratos</span>
                     </a>
                 </li>
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="{{route('mensalidades.index')}}">
+                        <i class="mdi mdi-currency-usd"></i>
+                        <span class="nav-text">Mensalidades</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
