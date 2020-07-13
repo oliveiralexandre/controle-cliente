@@ -59,10 +59,10 @@ class ContratoController extends Controller
             'data_contrato' => 'required|date',
             'data_vencimento_contrato' => 'required|date',
             'dia_vencimento' => 'required|numeric',
-            'valor' => 'required|numeric',
         ]);
-
-        Contrato::create($request->all());
+        $contrato = Contrato::create($request->all());
+        $contrato->valor = $contrato->produto->valor;
+        $contrato->save();
 
         return redirect()->route('contratos.index')
             ->with('success', 'Contrato criado com sucesso.');

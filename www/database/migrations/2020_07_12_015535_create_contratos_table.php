@@ -20,7 +20,7 @@ class CreateContratosTable extends Migration
             $table->date('data_contrato');
             $table->date('data_vencimento_contrato')->nullable();
             $table->integer('dia_vencimento');
-            $table->float('valor');
+            $table->float('valor')->nullable();
             $table->timestamps();
 
             $table->foreign('cliente_id')->references('id')->on('clientes');

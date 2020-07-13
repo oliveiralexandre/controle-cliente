@@ -30,7 +30,9 @@
                                     <select class="form-control" name="contrato_id" placeholder="Contrato">
                                         <option value="">Selecione...</option>
                                         @foreach($contratos as $contrato)
-                                            <option value="{{ $contrato->id }}" {{ old("contrato_id") == $contrato->id ? "selected":"" }}>{{ $contrato->id }}</option>
+                                            <option value="{{ $contrato->id }}" {{ old("contrato_id") == $contrato->id ? "selected":"" }}>
+                                                {{ $contrato->id . ') ' . $contrato->cliente->nome . ' - ' . $contrato->produto->nome }}
+                                            </option>
                                         @endforeach
                                       </select>
                                 </div>

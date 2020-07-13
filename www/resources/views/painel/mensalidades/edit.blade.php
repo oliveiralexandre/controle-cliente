@@ -31,7 +31,9 @@
                                     <select class="form-control" name="contrato_id" placeholder="Contratos">
                                         <option value="">Selecione...</option>
                                         @foreach($contratos as $contrato)
-                                            <option value="{{ $contrato->id }}" {{ $contrato->id == $mensalidade->contrato_id ? 'selected="selected"' : '' }}>{{ $contrato->id }}</option>
+                                            <option value="{{ $contrato->id }}" {{ $contrato->id == $mensalidade->contrato_id ? 'selected="selected"' : '' }}>
+                                                {{ $contrato->id . ') ' . $contrato->cliente->nome . ' - ' . $contrato->produto->nome }}
+                                            </option>
                                         @endforeach
                                       </select>
                                 </div>
@@ -40,6 +42,12 @@
                                 <div class="form-group">
                                     <strong>Data de vencimento:</strong>
                                     <input type="text" name="data_vencimento" value="{{ $mensalidade->data_vencimento }}" class="form-control" placeholder="Data de vencimento">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Data de pagamento:</strong>
+                                    <input type="text" name="data_pagamento" value="{{ $mensalidade->data_pagamento }}" class="form-control" placeholder="Data de pagamento">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4">

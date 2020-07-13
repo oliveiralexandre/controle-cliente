@@ -42,7 +42,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Data de Pagamento:</strong>
-                                {{ $mensalidade->pagamento }}
+                                {{ $mensalidade->data_pagamento }}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">

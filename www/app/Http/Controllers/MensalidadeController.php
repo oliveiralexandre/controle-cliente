@@ -39,7 +39,11 @@ class MensalidadeController extends Controller
      */
     public function create()
     {
-        $contratos = Contrato::all(['id']);
+        $contratos = Contrato::with('cliente', 'produto')->get([
+            'id',
+            'cliente_id',
+            'produto_id',
+        ]);
         return view('painel.mensalidades.create', compact('contratos'));
     }
 
@@ -80,7 +84,11 @@ class MensalidadeController extends Controller
      */
     public function edit(Mensalidade $mensalidade)
     {
-        $contratos = Contrato::all(['id']);
+        $contratos = Contrato::with('cliente', 'produto')->get([
+            'id',
+            'cliente_id',
+            'produto_id',
+        ]);
         return view(
             'painel.mensalidades.edit',
             compact('mensalidade', 'contratos')

@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4">
                                 <div class="form-group">
-                                    <strong>Estado:</strong>
+                                    <strong>Estado Sigla:</strong>
                                     <input type="text" name="estado" class="form-control" placeholder="Estado" value="{{ old('estado') }}">
                                 </div>
                             </div>

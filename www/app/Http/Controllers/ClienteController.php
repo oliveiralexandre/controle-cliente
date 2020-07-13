@@ -53,6 +53,9 @@ class ClienteController extends Controller
             'nome' => 'required',
             'cpf' => 'required',
             'email' => 'required|email|unique:clientes,email',
+            'data_aniversario' => 'nullable|date',
+            'numero' => 'nullable|numeric',
+            'estado' => 'nullable|max:2',
         ]);
 
         Cliente::create($request->all());
@@ -95,7 +98,10 @@ class ClienteController extends Controller
         $request->validate([
             'nome' => 'required',
             'cpf' => 'required',
-            'email' => 'required|email|unique:clientes,email',
+            'email' => 'required|email|unique:clientes,email,' . $cliente->id,
+            'data_aniversario' => 'nullable|date',
+            'numero' => 'nullable|numeric',
+            'estado' => 'nullable|max:2',
         ]);
 
         $cliente->update($request->all());

@@ -65,12 +65,6 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Valor:</strong>
-                                    <input type="text" name="valor" class="form-control" placeholder="Valor" value="{{ old('valor') }}">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <a class="btn btn-secondary btn-default" href="{{ route('contratos.index') }}"> Voltar </a>
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
