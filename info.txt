@@ -13,6 +13,9 @@
 ## Helper
     https://packagist.org/packages/browner12/helpers
 
+## Multiplo websites
+    https://stackoverflow.com/questions/49489482/docker-nginx-multiple-apps-on-one-host
+
 ## Fluxo CRUD
     1- gerar controller com todos os métodos necessários e model
     docker-compose exec app php artisan make:controller ContratoController --resource --model=Contrato
@@ -26,5 +29,14 @@
     docker-compose exec app php artisan migrate
 
     4- incluir as rotas no arquivo web.php
+        Ex: Route::resource('contratos', 'ContratoController');
+            Verb       URI                         Action   Route Name
+            GET        /contratos                  index    contratos.index
+            GET        /contratos/create           create   contratos.create
+            POST       /contratos                  store    contratos.store
+            GET        /contratos/{contrato}       show     contratos.show
+            GET        /contratos/{contrato}/edit  edit     contratos.edit
+            PUT/PATCH  /contratos/{contrato}       update   contratos.update
+            DELETE     /contratos/{contrato}       destroy  contratos.destroy
 
     5- criar os arquivos de blades em www/resources/views/painel/<pasta com o nome do serviço>

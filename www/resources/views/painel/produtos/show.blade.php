@@ -8,20 +8,22 @@
                     <h2>Detalhes do Produto</h2>
                 </div>
                 <div class="card-body">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Nome:</strong>
-                            {{ $produto->nome }}
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Nome:</strong>
+                                {{ $produto->nome }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>CPF:</strong>
-                            {{ $produto->valor }}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>CPF:</strong>
+                                {{ $produto->valor }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <a class="btn btn-secondary btn-default" href="{{ route('produtos.index') }}"> Voltar </a>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <a class="btn btn-secondary btn-default" href="{{ route('produtos.index') }}"> Voltar </a>
+                        </div>
                     </div>
                 </div>
             </div>
