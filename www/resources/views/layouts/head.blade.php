@@ -7,7 +7,7 @@
         </button>
         <!-- search form -->
         <div class="search-form d-none d-lg-inline-block">
-            
+
         </div>
 
         <div class="navbar-right ">
@@ -42,7 +42,11 @@
                                 {{ Auth::user()->name }} <small class="pt-1">{{ Auth::user()->email }}</small>
                             </div>
                         </li>
-
+                        <li>
+                            <a href="{{ route('register') }}">
+                                <i class="mdi mdi-account"></i> Criar administrador
+                            </a>
+                        </li>
                         <li class="dropdown-footer">
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"> <i class="mdi mdi-logout"></i> {{ __('Sair') }} </a>
