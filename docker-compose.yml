@@ -10,7 +10,7 @@ services:
         PHP_VERSION: ${PHP_VERSION}
         REMOTE_WORKING_DIR: ${REMOTE_WORKING_DIR}
         USER: ${USER}
-    container_name: app
+    # container_name: app
     restart: unless-stopped
     volumes:
       - ${LOCAL_WORKING_DIR}:${REMOTE_WORKING_DIR}
@@ -25,7 +25,7 @@ services:
 
   nginx:
     image: nginx:alpine
-    container_name: nginx
+    # container_name: nginx
     restart: unless-stopped
     volumes:
       - ${LOCAL_WORKING_DIR}:${REMOTE_WORKING_DIR}
@@ -42,7 +42,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: db
+    # container_name: db
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: controle_clientes
@@ -57,7 +57,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    # container_name: phpmyadmin
     restart: unless-stopped    
     links:
       - "db:db"
