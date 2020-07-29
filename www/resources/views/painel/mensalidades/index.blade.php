@@ -30,7 +30,7 @@
                             <th>Data Lançamento</th>
                             <th>Data Vencimento</th>
                             <th>Data Pagamento</th>
-                            <th width="290px">Ações</th>
+                            <th width="350px">Ações</th>
                         </tr>
                         @foreach ($mensalidades as $mensalidade)
                         <tr>
@@ -43,6 +43,8 @@
                             <td>{{ $mensalidade->data_pagamento }}</td>
                             <td>
                                 <form action="{{ route('mensalidades.destroy', $mensalidade->id) }}" method="POST">
+
+                                    <a class="btn btn-secondary" href="{{ $mensalidade->init_point }}">Boleto</a>
 
                                     <a class="btn btn-info" href="{{ route('mensalidades.show', $mensalidade->id) }}">Detalhes</a>
 

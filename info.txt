@@ -16,6 +16,17 @@
 ## Multiplo websites
     https://stackoverflow.com/questions/49489482/docker-nginx-multiple-apps-on-one-host
 
+## Mercado pago
+    token sandbox:
+    comprador
+    {
+        "id": 524590415,
+        "nickname": "TETE9032589",
+        "password": "qatest5268",
+        "site_status": "active",
+        "email": "test_user_4960947@testuser.com"
+    }
+
 ## Fluxo CRUD
     1- gerar controller com todos os métodos necessários e model
     docker-compose exec app php artisan make:controller ContratoController --resource --model=Contrato
@@ -40,3 +51,19 @@
             DELETE     /contratos/{contrato}       destroy  contratos.destroy
 
     5- criar os arquivos de blades em www/resources/views/painel/<pasta com o nome do serviço>
+
+
+## resposta mercado pago
+    # failure
+    http://test.local/pagamento/resposta/failure?
+        collection_id=null
+        &collection_status=null
+        &external_reference=
+        &payment_type=null
+        &merchant_order_id=null
+        &preference_id=524591919-16f1cd44-627f-4298-88f8-312d5193c25a
+        &site_id=MLB
+        &processing_mode=aggregator
+        &merchant_account_id=null
+
+    http://test.local/pagamento/resposta/failure?collection_id=null&collection_status=null&external_reference=&payment_type=null&merchant_order_id=null&preference_id=524591919-16f1cd44-627f-4298-88f8-312d5193c25a&site_id=MLB&processing_mode=aggregator&merchant_account_id=null

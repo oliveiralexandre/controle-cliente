@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Contrato;
 use App\Mensalidade;
+use App\Traits\GerenciadorPreferencia;
 use Illuminate\Http\Request;
 
 class MensalidadeController extends Controller
 {
+    use GerenciadorPreferencia;
+
     /**
      * Create a new controller instance.
      *
@@ -59,7 +62,19 @@ class MensalidadeController extends Controller
             'contrato_id' => 'required|numeric',
         ]);
 
-        Mensalidade::create($request->all());
+        $mensalidade = Mensalidade::create($request->all());
+
+        $preference = $this->gerarPreferencia(
+            $mensalidade->contrato->produto,
+            $mensalidade->contrato->cliente
+        );
+
+        $dadosPagamento = [
+            'preference_id' => $preference->id,
+            'init_point' => $preference->init_point,
+        ];
+
+        $mensalidade->update($dadosPagamento);
 
         return redirect()->route('mensalidades.index')
             ->with('success', 'Mensalidade criada com sucesso.');

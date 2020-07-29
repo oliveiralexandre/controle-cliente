@@ -91,3 +91,18 @@ if (!function_exists('getMonthYearDesc')) {
         return strftime('%B/%Y', strtotime($lastMonth));
     }
 }
+
+if (!function_exists('castNull')) {
+
+    /**
+     * Convert string null to NULL
+     *
+     * @param string $param
+     *
+     * @return NULL|mixed
+     */
+    function castNull($param)
+    {
+        return $param === 'null' ? null : $param;
+    }
+}
