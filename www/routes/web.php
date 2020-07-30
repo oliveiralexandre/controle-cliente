@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/pagamento/resposta/{status?}', 'WelcomeController@index')
+Route::get('/', 'WelcomeController@index')->name('welcome');
+
+Route::get('/pagamento/resposta/{status?}', 'WelcomeController@pagamento')
     ->name('pagamento.resposta');
 
 Route::get('/pagamento/notificacao/ipn', 'WelcomeController@notificacao')

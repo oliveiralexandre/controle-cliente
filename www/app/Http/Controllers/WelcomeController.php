@@ -12,7 +12,17 @@ class WelcomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($status, Request $request)
+    public function index()
+    {
+        return view('welcome');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function pagamento($status, Request $request)
     {
         $request->session()->flash($status);
 
@@ -28,7 +38,7 @@ class WelcomeController extends Controller
                 'merchant_account_id' => castNull($request->input('merchant_account_id')),
             ]);
 
-        return view('welcome');
+        return view('pagamento');
     }
 
     /**

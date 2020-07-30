@@ -84,8 +84,20 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Sejam todos bem vindos
+                    Status do pagamento
                 </div>
+
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <span>{{ __('Pagamento realizado com sucesso!') }}</span>
+                    </div>
+                @endif
+
+                @if ($message = Session::get('failure'))
+                    <div class="alert alert-danger">
+                        <span>{{ __('Ops, algo de errado ocorreu com seu pagamento. Tente novamente!') }}</span>
+                    </div>
+                @endif
             </div>
         </div>
     </body>
