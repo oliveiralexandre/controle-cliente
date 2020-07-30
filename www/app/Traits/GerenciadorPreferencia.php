@@ -30,7 +30,7 @@ trait GerenciadorPreferencia
             'pending' => route('pagamento.resposta', ['pending']),
         ];
         $preference->auto_return = 'approved';
-        $preference->notification_url = route('mercadopago.notificacao.ipn');
+        $preference->notification_url = route('pagamento.notificacao.ipn');
         $preference->save();
 
         debug($preference);

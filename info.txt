@@ -52,6 +52,9 @@
 
     5- criar os arquivos de blades em www/resources/views/painel/<pasta com o nome do serviço>
 
+## dados login
+    Login: gerente
+    Senha: tiob02sed@04
 
 ## resposta mercado pago
     # failure
