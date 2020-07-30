@@ -55,7 +55,7 @@ trait GerenciadorPreferencia
     {
         $payer = new Payer();
         $payer->name = $cliente->nome;
-        $payer->email = 'test_user_4960947@testuser.com';//$cliente->email;
+        $payer->email = $cliente->email;
         $payer->date_created = $cliente->created_at;
         $payer->address = [
             'street_name' => $cliente->endereco,
