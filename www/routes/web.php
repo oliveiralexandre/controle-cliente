@@ -21,6 +21,9 @@ Route::get('/pagamento/resposta/{status?}', 'WelcomeController@pagamento')
 Route::get('/pagamento/notificacao/ipn', 'WelcomeController@notificacao')
     ->name('pagamento.notificacao.ipn');
 
+Route::get('/contato', 'ContatoController@index')->name('contato');
+Route::post('/contato', 'ContatoController@store')->name('contato.store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
