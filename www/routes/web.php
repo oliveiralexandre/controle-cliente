@@ -27,6 +27,7 @@ Route::post('/contato', 'ContatoController@store')->name('contato.store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/painel', 'HomeController@index')->name('home');
 
 Route::resource('clientes', 'ClienteController');
 Route::resource('produtos', 'ProdutoController');
