@@ -273,7 +273,7 @@ Clique no ícone de ajuda acima para saber mais.
 				                <div class="row">
                     <div class="">
 						<h2 class="hestia-title">SERVIÇOS - Bill’s Som - Rastreamento</h2>
-							<h5 class="description">Há 30 anos na cidade de Rio Claro-SP trabalhando com Qualidade e Profissionalismo.</h5>
+							<h5 class="description">Há 30 anos na cidade de Rio Claro-SP trabalhando com Qualidade e Profissionalismo</h5>
 						                    </div>
                 </div>
 				        <div class="hestia-features-content">
