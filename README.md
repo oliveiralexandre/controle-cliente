@@ -3,7 +3,7 @@
 Sistema para controle de clientes e boletos de diversos produtos
 
   - Listagem de clientes
-  - Geração de boletos com integração do pagseguro
+  - Geração de boletos com integração do mercadopago
 
 ### Tecnologias
 
